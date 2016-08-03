@@ -1,0 +1,4 @@
+" vim: filetype=vim
+
+set nocompatible               " be iMproved
+filetype off                   " required!

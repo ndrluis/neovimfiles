@@ -1,0 +1,34 @@
+" vim: filetype=vim
+
+set background=dark
+
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+
+set number tabstop=2 sw=2 bs=2 mouse=a
+set ruler title cursorline
+
+" set the space from the current line when scrolling
+set scrolloff=3
+
+" command-line completion shows a list of matches
+set wmnu
+
+" add marker for when changing something
+set cpo+=$
+
+"load the status line
+"source ~/.vim/conf/statusline
+
+set guifont=Inconsolata\ for\ Powerline:h12
+
+"Set a better font depending on system
+ let g:Powerline_symbols = 'fancy'
+ set encoding=utf-8
+ set t_Co=256
+ set fillchars+=stl:\ ,stlnc:\
+ set termencoding=utf-8
+
+" Clojure options.
+let g:slime_target = "tmux"
+let g:rbpt_max = 9

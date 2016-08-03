@@ -1,0 +1,71 @@
+" vim: filetype=vim
+filetype plugin indent on
+let mapleader = ","
+
+" Move between terminals using ALT + Arrows
+nnoremap <silent> <A-Right> <c-w>l
+nnoremap <silent> <A-Left> <c-w>h
+nnoremap <silent> <A-Up> <c-w>k
+nnoremap <silent> <A-Down> <c-w>j
+
+" FZF Fuzzy finder
+nnoremap <c-p> :FZF<cr>
+
+" search options
+set ignorecase smartcase gdefault showmatch hlsearch incsearch
+
+" enable syntax highlight
+syntax on
+
+" set the buffer to become hidden instead of preventing the user from changing to another buffer
+set hidden
+
+" consistent indenting options
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+
+" set proper encoding for files
+set encoding=utf8
+set fileencoding=utf8
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" automatically reload the files if they were modified outside vim
+set autoread
+
+" enable per-directory .vimrc files
+set exrc
+
+" disable unsafe commands in local .vimrc files
+set secure
+
+" improve the autocomplete menu
+set completeopt=menuone,preview
+
+" load gems ctags
+set tags+=gems.tags
+
+" ignores for CtrlP
+set wildignore+=*.o,*.obj,.git,*/tmp/**,*/build/**,*/coverage/**,.jhw-cache,*/.yardoc/**,*/public/source_maps/**,*/node_modules/**,*/vendor/bundle/**,*/target/**
+
+"set split to open in a more natural setup
+set splitbelow
+set splitright
+
+" TODO: Document options below
+set showfulltag
+set autoindent
+set ruler
+set number
+set nowrap
+set cursorline
+set laststatus=2
+set showcmd
+set showmode
+set noerrorbells
+set novisualbell
+set shiftround
+set modelines=1
+
+set ttyfast
+set lazyredraw
