@@ -51,9 +51,6 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-projectionist'
 Plug 'snoe/nvim-parinfer.js'
 
-" SML
-Plug 'jez/vim-better-sml'
-
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
