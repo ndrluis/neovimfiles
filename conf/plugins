@@ -51,6 +51,8 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-projectionist'
 Plug 'snoe/nvim-parinfer.js'
 
+Plug 'luochen1990/rainbow'
+
 " SML
 Plug 'cypok/vim-sml'
 
@@ -65,6 +67,7 @@ call plug#end()
 set rtp+=/usr/local/opt/fzf
 let g:rspec_command = "Dispatch bundle exec spring rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
+let g:rainbow_active = 1
 
 let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
 let g:neomake_sml_enabled_makers = ['smlnj']
