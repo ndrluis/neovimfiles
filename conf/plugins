@@ -75,3 +75,5 @@ autocmd! BufWritePost * Neomake
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+autocmd CompleteDone * pclose
