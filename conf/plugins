@@ -48,6 +48,7 @@ Plug 'guns/vim-clojure-static'
 
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-fireplace'
+
 Plug 'tpope/vim-projectionist'
 Plug 'snoe/nvim-parinfer.js'
 
@@ -55,6 +56,9 @@ Plug 'luochen1990/rainbow'
 
 " SML
 Plug 'cypok/vim-sml'
+
+" ELM
+Plug 'elmcast/elm-vim'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -71,9 +75,34 @@ let g:rainbow_active = 1
 
 let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
 let g:neomake_sml_enabled_makers = ['smlnj']
+
+" enable elm-make on elm
+
+" use neomake to build different files
+augroup neomake_neomake_build
+  autocmd! BufRead,BufWritePost *.elm Neomake elmmake
+augroup end
+
 autocmd! BufWritePost * Neomake
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+" Elm conf.
+let g:neomake_elm_elmmake_maker = {
+  \ 'exe': 'elm-make',
+  \ 'buffer_output': 1,
+  \ 'errorformat':
+    \ '%E%.%#--\ %m\ -%# %f' . ',' .
+    \ '%C%l\\|' . ',' .
+    \ '%C%.%#'
+\ }
+
+let g:elm_format_autosave = 1
+let g:neomake_elm_enabled_makers = [ 'elmmake' ]
+
+" Clojure conf.
+let g:slime_target = "tmux"
+let g:rbpt_max = 9
 
 autocmd CompleteDone * pclose

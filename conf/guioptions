@@ -28,7 +28,3 @@ set guifont=Inconsolata\ for\ Powerline:h12
  set t_Co=256
  set fillchars+=stl:\ ,stlnc:\
  set termencoding=utf-8
-
-" Clojure options.
-let g:slime_target = "tmux"
-let g:rbpt_max = 9
