@@ -18,11 +18,11 @@ Plug 'vim-scripts/AutoTag'
 Plug 'rking/ag.vim'
 Plug 'elzr/vim-json'
 Plug 'morhetz/gruvbox'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neovim/node-host'
 Plug 'tpope/vim-dispatch'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neomake/neomake'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Ruby / Rails
 Plug 'tpope/vim-rails'
@@ -42,41 +42,25 @@ Plug 'othree/html5.vim'
 Plug 'mxw/vim-jsx'
 
 " Clojure
-Plug 'jpalardy/vim-slime'
 Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-clojure-static'
 
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-fireplace'
-
+Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-projectionist'
-Plug 'snoe/nvim-parinfer.js'
 
+Plug 'snoe/clj-refactor.nvim'
+Plug 'clojure-vim/async-clj-omni'
 Plug 'luochen1990/rainbow'
 
 " SML
 Plug 'cypok/vim-sml'
 
-" ELM
-Plug 'elmcast/elm-vim'
-
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-
 call plug#end()
 
 " fzf - fuzzy finder
 set rtp+=/usr/local/opt/fzf
-let g:rspec_command = "Dispatch bundle exec spring rspec {spec}"
-let g:rspec_runner = "os_x_iterm2"
-let g:rainbow_active = 1
-
-let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
-let g:neomake_sml_enabled_makers = ['smlnj']
-
-" enable elm-make on elm
 
 " use neomake to build different files
 augroup neomake_neomake_build
@@ -86,23 +70,10 @@ augroup end
 autocmd! BufWritePost * Neomake
 
 filetype plugin on
+
 set omnifunc=syntaxcomplete#Complete
 
-" Elm conf.
-let g:neomake_elm_elmmake_maker = {
-  \ 'exe': 'elm-make',
-  \ 'buffer_output': 1,
-  \ 'errorformat':
-    \ '%E%.%#--\ %m\ -%# %f' . ',' .
-    \ '%C%l\\|' . ',' .
-    \ '%C%.%#'
-\ }
-
-let g:elm_format_autosave = 1
-let g:neomake_elm_enabled_makers = [ 'elmmake' ]
-
 " Clojure conf.
-let g:slime_target = "tmux"
 let g:rbpt_max = 9
 
 autocmd CompleteDone * pclose
