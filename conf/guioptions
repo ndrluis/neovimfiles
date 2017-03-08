@@ -20,6 +20,7 @@ set cpo+=$
 "load the status line
 "source ~/.vim/conf/statusline
 
+
 set guifont=Fira\ Code\ Retina:h12
 
 "Set a better font depending on system

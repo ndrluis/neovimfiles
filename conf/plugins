@@ -57,6 +57,9 @@ Plug 'luochen1990/rainbow'
 " SML
 Plug 'cypok/vim-sml'
 
+" Haxe
+Plug 'jdonaldson/vaxe'
+
 call plug#end()
 
 " fzf - fuzzy finder
@@ -72,6 +75,7 @@ autocmd! BufWritePost * Neomake
 filetype plugin on
 
 set omnifunc=syntaxcomplete#Complete
+let g:deoplete#enable_at_startup = 1
 
 " Clojure conf.
 let g:rbpt_max = 9
