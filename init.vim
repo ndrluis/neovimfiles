@@ -11,16 +11,21 @@ source $HOME/.config/nvim/conf/dirs
 let g:airline_powerline_fonts = 1
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
-" rspec
-let g:rspec_command = "Dispatch bundle exec spring rspec {spec}"
-let g:rspec_runner = "os_x_iterm2"
+" vim-test
+let test#strategy = "dispatch"
+let test#ruby#rspec#executable = 'bundle exec spring rspec'
+
+let test#python#djangotest#options = {
+  \ 'env': '--settings settings_tests'
+\}
 
 " rainbow
 let g:rainbow_active = 1
 
 " neomake
 let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
-let g:neomake_sml_enabled_makers = ['smlnj']
+let g:neomake_python_enabled_makers = ['pep8', 'pylama', 'flake8']
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
