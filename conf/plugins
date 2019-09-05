@@ -64,4 +64,5 @@ let g:deoplete#enable_at_startup = 1
 " Clojure conf.
 let g:rbpt_max = 9
 
+
 autocmd CompleteDone * pclose
