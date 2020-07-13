@@ -2,7 +2,6 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-
 " GUI
 Plug 'vim-airline/vim-airline'
 
@@ -23,7 +22,6 @@ Plug 'neovim/node-host'
 Plug 'tpope/vim-dispatch'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/dbext.vim'
 Plug 'janko-m/vim-test'
 
@@ -32,6 +30,9 @@ Plug 'tpope/vim-rails'
 Plug 'vim-scripts/ruby-matchit'
 Plug 'tpope/vim-rake'
 Plug 'thoughtbot/vim-rspec'
+
+" Elixir
+Plug 'elixir-editors/vim-elixir'
 
 " Frontend
 Plug 'ap/vim-css-color'
@@ -60,9 +61,7 @@ autocmd! BufWritePost * Neomake
 filetype plugin on
 
 set omnifunc=syntaxcomplete#Complete
-let g:deoplete#enable_at_startup = 1
 " Clojure conf.
 let g:rbpt_max = 9
-
 
 autocmd CompleteDone * pclose
